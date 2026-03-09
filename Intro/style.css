@@ -1,0 +1,42 @@
+body {
+  min-height: 100vh;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animate-me {
+  border: 1px solid black;
+  background-color: deeppink;
+  padding: 24px 16px;
+  transition: all 500ms;
+
+  animation: horizontalBounce 2s infinite;
+
+  &:hover {
+    cursor: pointer;
+    background-color: chartreuse;
+    padding: 48px 32px;
+    border-radius :16px;
+  }
+}
+
+@keyframes horizontalBounce{
+    0% { 
+        transform: translateX(0);
+     }
+25%{
+    transform: translateX(-100px);
+}
+50%{
+    transform: translateX(-100px);
+}
+
+75%{
+    transform: translateX(100px);
+}
+    100% {
+        transform: translateX(0)
+    }
+}

@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+div {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+
+  &:hover {
+    /width: 700px;
+    height: 500px;
+    transform: rotate(20deg);
+    transform: translateX(200px);
+    opacity: 0.33;
+  }
+}
+
+div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
