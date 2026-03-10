@@ -9,13 +9,12 @@ div {
   overflow: hidden;
   width: 300px;
   height: 200px;
+  transition: all 200ms steps(2, end);
 
   &:hover {
-    width: 700px;
-    height: 500px;
-    transform: rotate(20deg);
-    transform: translateX(200px);
-    opacity: 0.33;
+    transform: scale(2)  rotate(20deg);
+    filter: blur(2px);
+ 
   }
 }
 
