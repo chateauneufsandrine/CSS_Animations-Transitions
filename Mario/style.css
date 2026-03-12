@@ -1,0 +1,163 @@
+/*// BASE STYLES //*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+.grass,
+.sky,
+.road {
+  position: relative;
+}
+.sky {
+  height: 40%;
+  background-color: skyblue;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.33)
+  );
+}
+.grass {
+  z-index: 3;
+  height: 30%;
+  background-color: seagreen;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0.25)
+  );
+}
+.road {
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+/*// ELEMENTS TO ANIMATE //*/
+.mario {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  z-index: 5;
+  /* animation: mario-jump 2s infinite, 10s infinite; */
+  animation-name: mario-jump, drive;
+  animation-duration: 1.5s, 3s;
+  animation-iteration-count: infinite, infinite;
+}
+
+.luigi {
+  position: absolute;
+  top: -20px;
+  left: -50px;
+  z-index: 55;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.big-cloud {
+  z-index: 2;
+  top: 120px;
+  left: 0;
+  animation-name: big-cloud-move;
+  animation-duration: 8s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-delay: none;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.little-cloud {
+  z-index: 1;
+  top: 20px;
+  right: 0;
+  max-width: 200px;
+  animation-name: little-cloud-move;
+  animation-duration: 12s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-delay: none;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.big-cloud,
+.little-cloud {
+  position: absolute;
+}
+.lines {
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 6000px;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  animation-name: lines-move;
+  animation-duration: 200ms;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-delay: none;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+/*// KEYFRAMES //*/
+@keyframes drive {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1300px);
+  }
+}
+
+@keyframes mario-jump {
+  0% {
+    top: -50px;
+  }
+  40% {
+    top: -50px;
+  }
+
+  50% {
+    top: -85px;
+  }
+  60% {
+    top: -50px;
+  }
+
+  100% {
+    top: -50px;
+  }
+}
+
+@keyframes big-cloud-move {
+  0% {
+    transform: translate(1200px);
+  }
+
+  100% {
+    transform: translate(-300px);
+  }
+}
+
+@keyframes little-cloud-move {
+  0% {
+    transform: translate(400px);
+  }
+
+  100% {
+    transform: translate(-1400px);
+  }
+}
+
+@keyframes lines-move {
+  0% {
+    transform: translate(10px);
+  }
+  100% {
+  }
+}
